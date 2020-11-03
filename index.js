@@ -3,11 +3,11 @@ const { promises: fs } = require('fs')
 
 async function main() {
   const path = core.getInput('path');
-  const changelog = core.getInput('changelog');
+  const changelog = process.env.CHANGELOG;
 
   let content = '';
   try {
-    content = await fs.readFile(path, 'utf8')
+    content = await fs.readFile(path, 'utf8');
   } catch (error) {
     core.setFailed(error.message);
   }
