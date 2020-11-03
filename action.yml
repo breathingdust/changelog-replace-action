@@ -1,0 +1,12 @@
+name: 'changelog-replace-action'
+description: 'Replace unreleased changelog contents with supplied'
+inputs:
+  path:
+    description: 'Path to changelog file.'
+    required: true
+  changelog:
+    description: 'Contents to replace existing unreleased changelog with'
+runs:
+  using: 'node12'
+  main: 'index.js'
+  
